@@ -8,5 +8,6 @@ target 'Finanzas' do
   # Pods for Finanzas
 pod 'Firebase/Core'
 pod 'SpreadsheetView'
+pod 'FBSDKLoginKit'
 
 end

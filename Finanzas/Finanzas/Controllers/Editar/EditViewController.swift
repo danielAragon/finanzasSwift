@@ -14,9 +14,7 @@ class EditViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var bono: Bono!
     var pgStage: [String]!
     var ifStage: [Double?]!
-    
     @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bono = User.sharedInstance.bonos[bonoId]
@@ -49,6 +47,7 @@ class EditViewController: UIViewController,UITableViewDataSource, UITableViewDel
             return headerCell
         }
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if(textField.tag%10 == 1){
             pgStage[textField.tag/10] = textField.text!
@@ -56,7 +55,7 @@ class EditViewController: UIViewController,UITableViewDataSource, UITableViewDel
             ifStage[textField.tag/10] = Double(textField.text!)!
         }
     }
-    
+
     
     @IBAction func Actualizar(_ sender: Any) {
         self.tableView.endEditing(true)

@@ -16,13 +16,14 @@ extension UITextField{
         return Int(self.text!)!
     }
 }
-class NuevoBonoTableViewController: UITableViewController {
+class NuevoBonoTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var vNominal: UITextField!
     @IBOutlet weak var vComercial: UITextField!
     @IBOutlet weak var nroAños: UITextField!
     @IBOutlet weak var frecCupon: UITextField!
     @IBOutlet weak var diasXAño: UITextField!
+    
     @IBOutlet weak var tipoTasa: UITextField!
     @IBOutlet weak var cap: UITextField!
     @IBOutlet weak var tasaInteres: UITextField!
@@ -40,7 +41,10 @@ class NuevoBonoTableViewController: UITableViewController {
     @IBOutlet weak var cavaliTipo: UITextField!
     
     var datePicker: UIDatePicker?
-    
+    let pgTypes = ["360","365"]
+    var currentSelection: String = ""
+    var pickerView = UIPickerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker = UIDatePicker()
@@ -51,6 +55,10 @@ class NuevoBonoTableViewController: UITableViewController {
         view.addGestureRecognizer(tapGesture)
         
         fechaEmision.inputView = datePicker
+        self.pickerView.delegate = self
+        self.pickerView.backgroundColor = UIColor.white
+        self.diasXAño.inputView = self.pickerView
+        self.diasXAño.delegate = self
     }
     
     @objc func viewTapped(gestureRecognizer: UIGestureRecognizer){
@@ -72,5 +80,30 @@ class NuevoBonoTableViewController: UITableViewController {
     }
     @IBAction func goBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        label.text = self.pgTypes[row]
+        label.sizeToFit()
+        return label;
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pgTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pgTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.diasXAño.text = self.pgTypes[row]
+        self.currentSelection = self.pgTypes[row]
+        diasXAño.endEditing(true)
     }
 }

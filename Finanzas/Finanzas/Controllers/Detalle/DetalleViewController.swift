@@ -9,6 +9,56 @@
 import UIKit
 import SpreadsheetView
 
+class HeaderCell: Cell{
+    let label = UILabel()
+    
+    var title = "" {
+        didSet {
+            label.text = title
+        }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        label.frame = bounds
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        label.backgroundColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor = .lightGray
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        addSubview(label)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
+
+class PeriodCell: Cell{
+    let label = UILabel()
+    
+    var title = "" {
+        didSet {
+            label.text = title
+        }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        label.frame = bounds
+        
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        label.backgroundColor = UIColor(hex: "7D9232")
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        addSubview(label)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
 class DetalleCell: Cell{
     let label = UILabel()
     
@@ -25,7 +75,7 @@ class DetalleCell: Cell{
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .black
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = 1
         
         addSubview(label)
     }
@@ -41,11 +91,21 @@ class DetalleViewController: UIViewController, SpreadsheetViewDataSource, Spread
     @IBOutlet weak var spreadSheet: SpreadsheetView!
     
     override func viewDidLoad() {
+        
+        spreadSheet.layer.cornerRadius = 10
+        spreadSheet.layer.shadowColor = UIColor.init(hex: "25265E").cgColor
+        spreadSheet.layer.shadowOpacity = 0.1
+        spreadSheet.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        spreadSheet.layer.shadowRadius = 4
+        
         super.viewDidLoad()
         self.spreadSheet.dataSource = self
         self.spreadSheet.delegate = self
         
         spreadSheet.register(DetalleCell.self, forCellWithReuseIdentifier: String(describing: DetalleCell.self))
+        spreadSheet.register(HeaderCell.self, forCellWithReuseIdentifier: String(describing: HeaderCell.self))
+        spreadSheet.register(PeriodCell.self, forCellWithReuseIdentifier: String(describing: PeriodCell.self))
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,24 +123,79 @@ class DetalleViewController: UIViewController, SpreadsheetViewDataSource, Spread
     }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, widthForColumn column: Int) -> CGFloat {
-        return 80
+        if column == 0{
+            return 40
+        }else{
+            return 80
+        }
     }
 
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, heightForRow row: Int) -> CGFloat {
         return 40
     }
+    func frozenColumns(in spreadsheetView: SpreadsheetView) -> Int {
+        return 1
+    }
+    
+    func frozenRows(in spreadsheetView: SpreadsheetView) -> Int {
+        return 1
+    }
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
         
         if indexPath.row == 0 {
-            return nil
+            let header = spreadSheet.dequeueReusableCell(withReuseIdentifier: String(describing: HeaderCell.self), for: indexPath) as! HeaderCell
+
+            switch indexPath.column {
+            case 0:
+                header.title = "Nro"
+            case 1:
+                header.title = "Fecha\nProgramada"
+            case 2:
+                header.title = "Inflacion\nAnual"
+            case 3:
+                header.title = "Inflacion\nSemestral"
+            case 4:
+                header.title = "Plazo de\nGracia"
+            case 5:
+                header.title = "Bono"
+            case 6:
+                header.title = "Bono\nIndexado"
+            case 7:
+                header.title = "Cupon"
+            case 8:
+                header.title = "Cuota"
+            case 9:
+                header.title = "Amortizacion"
+            case 10:
+                header.title = "Prima"
+            case 11:
+                header.title = "Escudo"
+            case 12:
+                header.title = "Flujo\nEmisor"
+            case 13:
+                header.title = "Flujo Emisor\nc/Escudo"
+            case 14:
+                header.title = "Flujo\nBonista"
+            case 15:
+                header.title = "Flujo\nActivo"
+            case 16:
+                header.title = "Flujo activo\nX plazo"
+            case 17:
+                header.title = "Convexidad"
+            default:
+                header.title = " "
+            }
+            return header
         }
         
         let cell = spreadSheet.dequeueReusableCell(withReuseIdentifier: String(describing: DetalleCell.self), for: indexPath) as! DetalleCell
         
         switch indexPath.column {
         case 0:
-            cell.title = String(bono.periodosList[indexPath.row - 1])
+            let header = spreadSheet.dequeueReusableCell(withReuseIdentifier: String(describing: PeriodCell.self), for: indexPath) as! PeriodCell
+            header.title = String(bono.periodosList[indexPath.row - 1])
+            return header
         case 1:
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/mm/yy"

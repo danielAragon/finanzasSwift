@@ -24,17 +24,9 @@ class PeriodViewCell: UITableViewCell, UITextFieldDelegate, UIPickerViewDataSour
         self.pickerView.delegate = self
         self.pickerView.backgroundColor = UIColor.white
 
-        self.pgField.inputAccessoryView = self.pickerView
+        self.pgField.inputView = self.pickerView
         self.pgField.delegate = self
-        self.pgField.returnKeyType = .continue
     }
-    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        let pg = self.superclass as! EditViewController
-//        for i in pg.bono.plazoGraciaList{
-//            print(i)
-//        }
-//    }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
         label.text = self.pgTypes[row]
@@ -57,10 +49,10 @@ class PeriodViewCell: UITableViewCell, UITextFieldDelegate, UIPickerViewDataSour
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.pgField.text = self.pgTypes[row]
         self.currentSelection = self.pgTypes[row]
+        self.endEditing(true)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
 }
