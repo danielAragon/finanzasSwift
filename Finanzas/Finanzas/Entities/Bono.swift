@@ -107,6 +107,7 @@ class Bono{
     var prima: Double
     var impRenta: Double
     var diasXAño: Int
+    
     var periodosList: [Int]
     var fechasList: [Date]
     var inflacionAnualList: [Double]
@@ -167,7 +168,6 @@ class Bono{
     public func Aleman(){
         for n in 1...rs.nroPeriodosTotal{
             if n != 0 {
-                
                 fechasList[n] = fechasList[n] + TimeInterval(rs.freqCupon*n*60*60*24)
             }
             inflacionSemestralList[n] = pow(1+inflacionAnualList[n], rs.freqCupon.d/diasXAño.d)-1

@@ -20,6 +20,7 @@
 		5058BA1F20B7459000E1837B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5058BA1D20B7459000E1837B /* LaunchScreen.storyboard */; };
 		5058BA2920B7467800E1837B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5058BA2820B7467800E1837B /* GoogleService-Info.plist */; };
 		50B3B1FA20DD864000A49B18 /* NuevoBonoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3B1F920DD864000A49B18 /* NuevoBonoTableViewController.swift */; };
+		50EB11D320E523E600C4C4BC /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50EB11D220E523E600C4C4BC /* View.xib */; };
 		50F1629020D5BD840030F98B /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1628F20D5BD840030F98B /* Math.swift */; };
 		50F1629220D5E6490030F98B /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1629120D5E6490030F98B /* DetalleViewController.swift */; };
 		50F1629420D5E71F0030F98B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1629320D5E71F0030F98B /* EditViewController.swift */; };
@@ -42,6 +43,7 @@
 		5058BA2020B7459000E1837B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5058BA2820B7467800E1837B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50B3B1F920DD864000A49B18 /* NuevoBonoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoBonoTableViewController.swift; sourceTree = "<group>"; };
+		50EB11D220E523E600C4C4BC /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		50F1628F20D5BD840030F98B /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		50F1629120D5E6490030F98B /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		50F1629320D5E71F0030F98B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				50F1629120D5E6490030F98B /* DetalleViewController.swift */,
+				50EB11D220E523E600C4C4BC /* View.xib */,
 			);
 			path = Detalle;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5058BA1F20B7459000E1837B /* LaunchScreen.storyboard in Resources */,
+				50EB11D320E523E600C4C4BC /* View.xib in Resources */,
 				5058BA2920B7467800E1837B /* GoogleService-Info.plist in Resources */,
 				5058BA1C20B7459000E1837B /* Assets.xcassets in Resources */,
 				5058BA1720B7458C00E1837B /* Main.storyboard in Resources */,
@@ -477,7 +481,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ZV8L79U5U;
 				INFOPLIST_FILE = Finanzas/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.UPC.Finanzas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -493,7 +500,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ZV8L79U5U;
 				INFOPLIST_FILE = Finanzas/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.UPC.Finanzas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -12,12 +12,10 @@ public class Math {
     
     static func computeIRR(cashFlows:[Double], presentValues: (([Double]) -> ())? = nil) -> Double? {
         
-        // const
-        let MAX_ITERATION = 1000        // Max Iteration
-        let PRECISION_REQ = 0.00000001  // Percision
+        let MAX_ITERATION = 1000
+        let PRECISION_REQ = 0.00000001
         
-        // variable
-        var guessRate0: Double = 0.1;   // Default: 10%
+        var guessRate0: Double = 0.1;
         var guessRate1: Double = 0.0;
         var derivative: Double = 0.0;
         var nowCash: Double = 0.0;

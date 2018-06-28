@@ -263,7 +263,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Finanzas/Controllers/Bonos/BonosViewController.swift"
-            timestampString = "551851314.4686691"
+            timestampString = "551897270.6643209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -341,23 +341,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Finanzas/Entities/Bono.swift"
-            timestampString = "551851314.4689749"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "init(vNom:vCom:nrA&#xf1;:freq:dxA&#xf1;:tTas:capi:tInt:tDesc:impR:fEmi:prim:estr:estrTipo:colo:coloTipo:flot:flotTipo:cava:cavaTipo:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Finanzas/Entities/Bono.swift"
-            timestampString = "551851314.469022"
+            timestampString = "551897270.664952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -373,11 +357,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Finanzas/Entities/Bono.swift"
-            timestampString = "551851314.469057"
+            timestampString = "551897270.665045"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "init(vNom:vCom:nrA&#xf1;:freq:dxA&#xf1;:tTas:capi:tInt:tDesc:impR:fEmi:prim:estr:estrTipo:colo:coloTipo:flot:flotTipo:cava:cavaTipo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -389,7 +373,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Finanzas/Entities/Bono.swift"
-            timestampString = "551851314.4690911"
+            timestampString = "551897270.665128"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "init(vNom:vCom:nrA&#xf1;:freq:dxA&#xf1;:tTas:capi:tInt:tDesc:impR:fEmi:prim:estr:estrTipo:colo:coloTipo:flot:flotTipo:cava:cavaTipo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finanzas/Entities/Bono.swift"
+            timestampString = "551897270.665181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
@@ -405,7 +405,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Finanzas/Entities/Bono.swift"
-            timestampString = "551851314.469125"
+            timestampString = "551897270.665251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
@@ -437,7 +437,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Finanzas/Entities/Bono.swift"
-            timestampString = "551851314.469197"
+            timestampString = "551897270.665357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"

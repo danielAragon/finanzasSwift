@@ -1450,7 +1450,19 @@
                     <view key="view" contentMode="scaleToFill" id="nnz-8v-nRW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgj-hl-ccP" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cUf-n6-kf8" firstAttribute="trailing" secondItem="Zgj-hl-ccP" secondAttribute="trailing" id="InS-sd-WRs"/>
+                            <constraint firstItem="cUf-n6-kf8" firstAttribute="bottom" secondItem="Zgj-hl-ccP" secondAttribute="bottom" id="f8Q-mn-Pqm"/>
+                            <constraint firstItem="Zgj-hl-ccP" firstAttribute="leading" secondItem="cUf-n6-kf8" secondAttribute="leading" id="gyy-9H-cpo"/>
+                            <constraint firstItem="Zgj-hl-ccP" firstAttribute="top" secondItem="cUf-n6-kf8" secondAttribute="top" id="ndp-L2-79k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cUf-n6-kf8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detalle" id="rzi-v9-k7X">
@@ -1467,6 +1479,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="spreadSheet" destination="Zgj-hl-ccP" id="e8a-7f-SvH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNa-f5-07r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
