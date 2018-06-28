@@ -67,5 +67,10 @@ class NuevoBonoTableViewController: UITableViewController {
         let bono = Bono(vNom:vNominal.toDouble, vCom:vComercial.toDouble, nrAñ:nroAños.toInt, freq: frecCupon.text!, dxAñ:diasXAño.toInt, tTas: tipoTasa.text!, capi:cap.text!, tInt:tasaInteres.toDouble/100, tDesc:tasaDescuento.toDouble/100, impR:impuestoRenta.toDouble/100, fEmi:datePicker?.date, prim:prima.toDouble/100, estr:estructuracion.toDouble/100, estrTipo:estructuracionTipo.text!, colo:colocacion.toDouble/100, coloTipo: colocacionTipo.text!, flot:flotacion.toDouble/100, flotTipo:flotacionTipo.text!, cava:cavali.toDouble/100, cavaTipo:cavaliTipo.text!)
         bono.Aleman()
         User.sharedInstance.bonos.append(bono)
+        self.navigationController?.popViewController(animated: true)
+
+    }
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

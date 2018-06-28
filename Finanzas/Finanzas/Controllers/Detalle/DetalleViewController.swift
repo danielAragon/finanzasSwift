@@ -31,4 +31,8 @@ class DetalleViewController: UIViewController {
             destination.ifStage = User.sharedInstance.bonos[bonoId].inflacionAnualList
         }
     }
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+
+    }
 }

@@ -45,7 +45,7 @@ class EditViewController: UIViewController,UITableViewDataSource, UITableViewDel
             periodCell.cuotaLabel.text = String(format: "%.2f" ,bono.cuotaList[indexPath.row])
             return periodCell
         }else{
-            let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderViewCell", for: indexPath) as! PeriodHeaderViewCell
+            let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderViewCell", for: indexPath)
             return headerCell
         }
     }
@@ -65,5 +65,9 @@ class EditViewController: UIViewController,UITableViewDataSource, UITableViewDel
         bono.Aleman()
         User.sharedInstance.bonos[bonoId] =  bono
         self.tableView.reloadData()
+    }
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+
     }
 }

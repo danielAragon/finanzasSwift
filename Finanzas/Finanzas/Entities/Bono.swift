@@ -187,6 +187,7 @@ class Bono{
         }
         rs.utilidad = Math.computeNPV(desc: rs.cok, cashFlows: flujoBonistaList)
         rs.precioActual = rs.utilidad - flujoBonistaList[0]
+        
         rs.duracion = flujoActxPlazoList.reduce(0, +)/flujoActList.reduce(0, +)
         rs.convexidad = convexidadList.reduce(0, +)/(pow(1+rs.cok,2.d)*flujoActList.reduce(0, +)*pow((diasXAño.d/rs.freqCupon.d),2.d))
         rs.total = rs.duracion + rs.convexidad

@@ -62,4 +62,8 @@ class ResultadosViewController: UITableViewController {
             destination.bonoId = self.bonoId
         }
     }
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 class BonosCell: UITableViewCell{
     
     @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var PeriodoLabel: UILabel!
 }
 
 class BonosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -35,7 +36,14 @@ class BonosViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BonosCell", for: indexPath) as! BonosCell
-        cell.TitleLabel.text = "Pago \(indexPath.row + 1)"
+        cell.TitleLabel.text = "Bono \(indexPath.row + 1)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/mm/yy"
+        
+        let beginDate: String = dateFormatter.string(from: User.sharedInstance.bonos[indexPath.row].fechasList.first!)
+        
+        let endDate: String = dateFormatter.string(from: User.sharedInstance.bonos[indexPath.row].fechasList.last!)
+        cell.PeriodoLabel.text = "\(beginDate) - \(endDate)"
         return cell
     }
     

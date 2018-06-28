@@ -29,12 +29,12 @@ class PeriodViewCell: UITableViewCell, UITextFieldDelegate, UIPickerViewDataSour
         self.pgField.returnKeyType = .continue
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let pg = self.superclass as! EditViewController
-        for i in pg.bono.plazoGraciaList{
-            print(i)
-        }
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        let pg = self.superclass as! EditViewController
+//        for i in pg.bono.plazoGraciaList{
+//            print(i)
+//        }
+//    }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
         label.text = self.pgTypes[row]

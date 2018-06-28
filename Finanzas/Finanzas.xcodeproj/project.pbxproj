@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2362BBC02FE3A25769DBF1B5 /* Pods_Finanzas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD59D7ABC5E4CC2D54A7F19F /* Pods_Finanzas.framework */; };
-		503E250720CE37F500625306 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E250620CE37F500625306 /* Result.swift */; };
 		503E250920CEDE3500625306 /* Bono.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E250820CEDE3500625306 /* Bono.swift */; };
 		503E250B20CEF1F600625306 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E250A20CEF1F600625306 /* User.swift */; };
 		503E250D20CF19F900625306 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E250C20CF19F900625306 /* LoginViewController.swift */; };
@@ -25,12 +24,10 @@
 		50F1629220D5E6490030F98B /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1629120D5E6490030F98B /* DetalleViewController.swift */; };
 		50F1629420D5E71F0030F98B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1629320D5E71F0030F98B /* EditViewController.swift */; };
 		50F1629720D5E9510030F98B /* PeriodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1629620D5E9510030F98B /* PeriodViewCell.swift */; };
-		50F1629920D5E9740030F98B /* PeriodHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1629820D5E9740030F98B /* PeriodHeaderViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25097D90213BDFDADC0357D4 /* Pods-Finanzas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finanzas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finanzas/Pods-Finanzas.release.xcconfig"; sourceTree = "<group>"; };
-		503E250620CE37F500625306 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		503E250820CEDE3500625306 /* Bono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bono.swift; sourceTree = "<group>"; };
 		503E250A20CEF1F600625306 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		503E250C20CF19F900625306 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +46,6 @@
 		50F1629120D5E6490030F98B /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		50F1629320D5E71F0030F98B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		50F1629620D5E9510030F98B /* PeriodViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodViewCell.swift; sourceTree = "<group>"; };
-		50F1629820D5E9740030F98B /* PeriodHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodHeaderViewCell.swift; sourceTree = "<group>"; };
 		AD59D7ABC5E4CC2D54A7F19F /* Pods_Finanzas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finanzas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E333A0899D036E3A4CA5343D /* Pods-Finanzas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finanzas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finanzas/Pods-Finanzas.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +77,6 @@
 		503E250320CE35B200625306 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				503E250620CE37F500625306 /* Result.swift */,
 				503E250820CEDE3500625306 /* Bono.swift */,
 				503E250A20CEF1F600625306 /* User.swift */,
 			);
@@ -169,7 +164,6 @@
 			children = (
 				50F1629320D5E71F0030F98B /* EditViewController.swift */,
 				50F1629620D5E9510030F98B /* PeriodViewCell.swift */,
-				50F1629820D5E9740030F98B /* PeriodHeaderViewCell.swift */,
 			);
 			path = Editar;
 			sourceTree = "<group>";
@@ -288,11 +282,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Finanzas/Pods-Finanzas-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpreadsheetView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				503E250720CE37F500625306 /* Result.swift in Sources */,
 				50F1629720D5E9510030F98B /* PeriodViewCell.swift in Sources */,
 				5058BA1A20B7458C00E1837B /* Finanzas.xcdatamodeld in Sources */,
 				503E251320CF3ED800625306 /* ResultadosViewController.swift in Sources */,
@@ -332,7 +327,6 @@
 				503E250D20CF19F900625306 /* LoginViewController.swift in Sources */,
 				50F1629020D5BD840030F98B /* Math.swift in Sources */,
 				50F1629420D5E71F0030F98B /* EditViewController.swift in Sources */,
-				50F1629920D5E9740030F98B /* PeriodHeaderViewCell.swift in Sources */,
 				5058BA1220B7458C00E1837B /* AppDelegate.swift in Sources */,
 				503E250920CEDE3500625306 /* Bono.swift in Sources */,
 				503E250B20CEF1F600625306 /* User.swift in Sources */,
@@ -483,10 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ZV8L79U5U;
 				INFOPLIST_FILE = Finanzas/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UPC.Finanzas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -502,10 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ZV8L79U5U;
 				INFOPLIST_FILE = Finanzas/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UPC.Finanzas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
